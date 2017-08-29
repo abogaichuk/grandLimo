@@ -1,0 +1,252 @@
+body {
+    background-color: #282220;
+    font-family: 'Asap', sans-serif!important;
+    font-weight: normal;
+    text-align: center;
+    margin: 0px;
+    color: white;
+}
+
+#content {
+    background: url("../images/fon.jpg") no-repeat;
+    margin: 0;
+    background-size: cover;
+    height: 400px;
+    align-content: center;
+}
+
+header.top {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
+
+#site-navigation {
+    font-stretch: ultra-condensed;/*don't work???*/
+}
+
+#site-navigation ul {
+    margin: 0px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+}
+
+#site-navigation ul li {
+    display: inline;
+    padding: 5px 10px 5px 10px;
+}
+
+.yesNo {
+    margin: 0px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+}
+
+.yesNo ul li {
+    display: inline;
+    padding: 5px 10px 5px 10px;
+}
+
+.yesNo ul li a:link, .yesNo ul li a:visited {
+    color: yellow;
+    border-bottom: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration-line: none;
+}
+
+#site-navigation ul li a:link, #site-navigation ul li a:visited {
+    color: #72706F;
+    border-bottom: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration-line: none;
+}
+
+#site-navigation ul li a:hover {
+    color: #fffaa2;
+}
+
+#description {
+    padding: 10px 50px;
+}
+
+div#tableContainer {
+    display: table;
+    border-spacing: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div#rowFirst, div#rowSecond, div#rowThird {
+    display: table-row;
+    height: 200px;
+}
+
+#cadillacXTS, #linkolnMKT, #chevroletSuburban, #lincolnStretch,
+#mercedesS550, #hummerH2Stretch, #partyBus36, #partyBus25, #mercedesSprinter {
+    width: 34%;
+    height: auto;
+    display: table-cell;
+    padding: 0;
+}
+
+a img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+a img:hover {
+    -webkit-transform: scale(1.1,1.1);
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 550ms;
+    -moz-transform: scale(1.1,1.1);
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 550ms;
+}
+
+#about-cars {
+    background: url("../images/about-cars.png");
+    margin-top: 15px;
+    height: 350px;
+}
+
+#about-cars p {
+    text-align: left;
+    padding-top: 300px;
+    padding-left: 20px;
+}
+
+.about-us-section {
+    display: table-cell;
+}
+
+#about-us-content {
+    display: table-row;
+    line-height: 1.8em;
+}
+
+#about {
+    text-align: left;
+    font-weight: 700;
+}
+
+#service-header {
+    background: url("../images/service1.png");
+    margin-top: 15px;
+    height: 400px;
+    background-size: cover;
+}
+
+#service-header p {
+    text-align: left;
+    padding-top: 70px;
+    padding-left: 20px;
+}
+
+#service-description {
+    text-align: left;
+    padding: 10px 100px;
+}
+
+#service-container {
+    display: table;
+    border-spacing: 20px;
+    text-align: left;
+    padding: 10px 100px;
+    line-height: 1.8em;
+}
+
+.service-row {
+    display: table-row;
+}
+
+.service-row article {
+    display: table-cell;
+}
+
+#reservation-description {
+    padding: 20px 50px;
+    text-align: center;
+    line-height: 1.8em;
+}
+
+form {
+    display: table;
+    padding: 10px;
+    background-color: #cfc6e1;
+    color: #282220;
+    width: 700px;
+}
+
+div.tableRow {
+    display: table-row;
+}
+
+div.tableRow p {
+    display: table-cell;
+    align-content: center;
+    vertical-align: top;
+    padding: 3px;
+}
+
+div.tableRow p:first-child {
+    text-align: right;
+}
+
+div.tableRow p:last-child {
+    text-align: left;
+}
+
+.reservation-container {
+    display: table;
+    border-spacing: 10px;
+    margin: 0px 40px;
+    background-color: #cfc6e1;
+}
+
+#reservation-row {
+    display: table-row;
+    padding-left: 20px;
+}
+
+.reservation-cell, #selected-photo {
+    /*width: 45%;*/
+    vertical-align: top;
+    display: table-cell;
+}
+
+.reservation-form {
+    width: 40%;
+    vertical-align: top;
+    display: table-cell;
+}
+
+#selected-photo img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+.tableRow p.width250 input, .tableRow p.width250 select {
+    width: 250px;
+}
+
+td, th {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+#orders {
+    padding: 25px 50px;
+}
+
+/*#modal {
+    padding: 15px;
+}*/
+
+.submit {
+    width: 200px;
+}

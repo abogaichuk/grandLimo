@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Reservation</title>
+    <script src="https://www.w3schools.com/lib/w3data.js"></script>
+    <script src="js/grandLimo.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/grandLimo.css">
+</head>
+<body>
+<header class="top">
+    <nav id="site-navigation">
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="selected"><a href="reservation.html">Reservation</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="order.html">Orders</a></li>
+        </ul>
+    </nav>
+</header>
+<p id="reservation-description">To make online reservation, please choose a vehicle and complete the appropriate sections of the following form and press the "Submit" button. If you are a first time traveler with Chicago Grand Limousine, we will call you as soon as possible for your credit card number, conformation and the total price for charge of the credit card. Online reservations must be placed at least 24 hours in advance. If you require our services less than 24 hours before the trip, please contact us by phone right away (312)928-9693 - our reservation department is open Mon - Fri 09:00AM - 5:00PM and Sat 09:00AM - 3:00PM. Thank you for your business!</p>
+<div w3-include-html="modal.html" hidden></div>
+<div id="reservation-container" class="reservation-container">
+    <div id="reservation-row">
+        <div class="reservation-form">
+                <div class="tableRow">
+                    <p>
+                        Please choose a vehicle:
+                    </p>
+                    <p class="width250">
+                        <select id="vehicles" onchange="showPhoto(event)">
+                            <option value="Cadillac XTS" selected>Cadillac XTS</option>
+                            <option value="Lincoln MKT">Lincoln MKT</option>
+                            <option value="Chevrolet Suburban">Chevrolet Suburban</option>
+                            <option value="Lincoln Stretch">Lincoln Stretch</option>
+                            <option value="Mercedes Benz S550">Mercedes Benz S550</option>
+                            <option value="Hummer H2 Stretch">Hummer H2 Stretch</option>
+                            <option value="36 Passenger Party Bus">36 Passenger Party Bus</option>
+                            <option value="22 Passenger Party Bus">22 Passenger Party Bus</option>
+                            <option value="Mercedes Sprinter Limo">Mercedes Sprinter Limo</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="tableRow">
+                    <p>Place: </p>
+                    <p id="places">
+                        <input type="radio" name="place" value="Chicago" checked> Chicago
+                        <input type="radio" name="place" value="O'Hare"> O'Hare
+                        <input type="radio" name="place" value="Midway"> Midway
+                    </p>
+                </div>
+                <div class="tableRow label">
+                    <p> Date: </p>
+                    <p class="width250"> <input id="date" type="date" name="date"> </p>
+                </div>
+                <div class="tableRow">
+                    <p>Type: </p>
+                    <p>
+                        <input type="radio" name="type" value="depart" checked onclick="handleClick(event.target)"> Depart
+                        <input type="radio" name="type" value="arrive" onclick="handleClick(event.target)"> Arrive
+                    </p>
+                </div>
+                <div class="tableRow">
+                    <p> Airline: </p>
+                    <p class="width250"> <input type="text" id="airline" name="airline" value="" placeholder="AirFrance" required> </p>
+                </div>
+                <div class="tableRow">
+                    <p> Flight #: </p>
+                    <p class="width250"> <input type="text" id="flight" name="flight" value="" placeholder="AM3555" required> </p>
+                </div>
+                <div class="tableRow">
+                    <p> Phone Number: </p>
+                    <p class="width250"> <input type="text" id="phone" name="phone" value="" placeholder="(999) 9999999" required> </p>
+                </div>
+                <div class="tableRow">
+                    <p> Company: </p>
+                    <p class="width250"> <input type="text" id="company" name="company" value=""> </p>
+                </div>
+                <div class="tableRow">
+                    <p></p>
+                    <p> <input class="submit" type="submit" value="Order Now" onclick="sendData(event.target)"> </p>
+                </div>
+        </div>
+        <div id="selected-photo" class="reservation-cell">
+            <img id="image" src="images/2013-Cadillac-XTS-103.jpg" alt="CadillacXTS">
+        </div>
+    </div>
+</div>
+<br>
+Contact Info
+<br>
+Phone: 312-928-9693
+<br>
+Email: LuxuryGrandLimo@gmail.com
+<br>
+3137 N Davlin ct.
+<br>
+Chicago, IL, 60618
+<br>
+<img src="images/eagle_blank2_sm1.png" alt="logo">
+<script src="js/grandLimo.js"></script>
+</body>
+</html>
