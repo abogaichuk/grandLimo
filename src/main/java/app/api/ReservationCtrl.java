@@ -17,23 +17,23 @@ public class ReservationCtrl {
     @Autowired
     private OrderRepository orderRepository;
 
-    @GetMapping(value = "/getOrders")
+    @GetMapping(value = "/api/orders")
     public ResponseEntity<List<Order>> orders() {
         List<Order> all = orderRepository.findAll();
         return new ResponseEntity<>(all, OK);
     }
 
-    @GetMapping("/orders/{id}")
+    @GetMapping("/api/orders/{id}")
     public ResponseEntity<Order> orderById(@PathVariable String id) {
         return new ResponseEntity<>(orderRepository.findOne(id), OK);
     }
 
-    @PostMapping(value = "/orders")
+    @PostMapping(value = "/api/orders")
     public ResponseEntity<Order> save(@RequestBody Order order) {
         return new ResponseEntity<>(orderRepository.save(order), CREATED);
     }
 
-    @DeleteMapping("/orders/{id}")
+    @DeleteMapping("/api/orders/{id}")
     public ResponseEntity delete(@PathVariable String id) {
         orderRepository.delete(id);
         return new ResponseEntity(NO_CONTENT);

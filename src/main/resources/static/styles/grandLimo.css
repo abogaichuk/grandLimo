@@ -250,3 +250,15 @@ td, th {
 .submit {
     width: 200px;
 }
+
+#modal {
+    background-color: green;
+}
+
+#weather-container {
+    display: table-cell;
+    background-color: green;
+    padding-left: 50px;
+/*    align-content: center;
+    text-align: center;*/
+}

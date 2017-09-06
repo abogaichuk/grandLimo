@@ -1,3 +1,27 @@
+window.onload = init;
+
+var weather;
+
+function init() {
+    setWeather();
+    w3IncludeHTML();
+}
+
+function setWeather() {
+    var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22chicago%2C%20il%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+        var request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.onload = function () {
+            if (request.status == 200) {
+                weather = JSON.parse(request.responseText);
+            } else {
+                console.log(request.responseText);
+                alert("beda");
+            }
+        };
+        request.send(null);
+}
+
 function showPhoto(event) {
     var select = event.target;
     var option = select.options[select.selectedIndex];
@@ -9,8 +33,6 @@ function showPhoto(event) {
     img.src = imageName;
     img.alt = option.value;
 }
-
-w3IncludeHTML();
 
 function getImageByName(name) {
     switch (name) {
@@ -94,7 +116,7 @@ function dataAsJson() {
 }
 
 function sendData() {
-    var url = "http://localhost:8080/orders";
+    var url = "http://localhost:8080/api/orders";
     var request = new XMLHttpRequest();
     request.open("POST", url);
     request.setRequestHeader("Content-Type", "application/json");
@@ -102,6 +124,24 @@ function sendData() {
         if (request.status == 201) {
             var modal = document.getElementById("modal");
             modal.removeAttribute("hidden");
+            var date = document.getElementById("weatherDate");
+            date.innerHTML = weather.query.results.channel.lastBuildDate;
+            var link = document.getElementById("link");
+            var s = weather.query.results.channel.link;
+            var a = document.createElement('a');
+            a.href = s.substring(s.search("\\*")+1, s.length);
+            var linkText = document.createTextNode(s.substring(s.search("\\*")+1, s.length));
+            a.appendChild(linkText);
+            link.appendChild(a);
+
+            var temperatureLow = document.getElementById("temperatureLow");
+            temperatureLow.innerHTML = weather.query.results.channel.item.forecast[0].low;
+            var temperatureHigh = document.getElementById("temperatureHigh");
+            temperatureHigh.innerHTML = weather.query.results.channel.item.forecast[0].high;
+            var text = document.getElementById("text");
+            text.innerHTML = weather.query.results.channel.item.forecast[0].text;
+            var wind = document.getElementById("wind");
+            wind.innerHTML = weather.query.results.channel.wind.speed;
             document.body.replaceChild(modal, document.getElementById("reservation-container"));
         } else {
             alert(request.responseText);

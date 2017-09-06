@@ -5,7 +5,7 @@ function init() {
 }
 
 function getOrders() {
-    var url = "http://localhost:8080/getOrders";
+    var url = "http://localhost:8080/api/orders";
     var request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = function () {
